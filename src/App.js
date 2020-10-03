@@ -3,12 +3,25 @@ import './App.css';
 import { MenuItem, FormControl, Select, Card, CardContent } from '@material-ui/core';
 import InfoBox from './InfoBox';
 import Map from './Map';
-import Header from './Header'
+import Header from './Header';
+import Table from './Table';
+import { sortData, prettyPrintStat } from './utils';
+import LineGraph from './LineGraph';
 
 function App() {
   const [countries, setCountires] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
+  const [casesType, setCasesType] = useState("cases");
+
+  useEffect(() => {
+    fetch("https://disease.sh/v3/covid-19/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setCountryInfo(data);
+      });
+  }, []);
 
   useEffect(() => {
     const getCountiresData = async () => {
@@ -19,7 +32,8 @@ function App() {
             name: country.country,
             value: country.countryInfo.iso2,
           }));
-
+          const sortedData = sortData(data);
+          setTableData(sortedData);
           setCountires(countries);
         });
     };
@@ -30,7 +44,6 @@ function App() {
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
 
-    console.log('Country Code showing is >>>>>> ', countryCode)
 
     setCountry(countryCode);
 
@@ -47,7 +60,6 @@ function App() {
       })
   };
 
-  console.log('Country Info >>>>>>', countryInfo)
   return (
     <div>
       <Header />
@@ -74,9 +86,9 @@ function App() {
           {/* InfoBoxes */}
           {/* InfoBoxes */}
           <div className="app_stats">
-            <InfoBox title="Coronavirus Cases" cases={countryInfo.todayCases} total={2000} />
-            <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={2000} />
-            <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={2000} />
+            <InfoBox title="Coronavirus Cases" cases={prettyPrintStat(countryInfo.todayCases)} total={prettyPrintStat(countryInfo.cases)} />
+            <InfoBox title="Recovered" cases={prettyPrintStat(countryInfo.todayRecovered)} total={prettyPrintStat(countryInfo.recovered)} />
+            <InfoBox title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)} />
           </div>
 
           {/* Map */}
@@ -85,9 +97,19 @@ function App() {
         </div>
         <Card className="app_right">
           <CardContent>
-            <h3>Live Cases by Country</h3>
+            <div className="app_titleAndLogo">
+              <h3>Most Cases</h3>
+              <img
+                className="app_liveLogo"
+                src="https://w4university.files.wordpress.com/2020/01/giphy-1.gif"
+                alt="Live Now Animation"
+              />
+            </div>
+
             {/* Table */}
-            <h3>Worldwide new cases</h3>
+            <Table countries={tableData} />
+            <h3>New Cases (Worldwide)</h3>
+            <LineGraph />
             {/* Graph */}
           </CardContent>
 

@@ -36,3 +36,13 @@ body {
     flex-direction: column;
   }
 }
+
+.app_liveLogo {
+  margin-top: -5px;
+  margin-left: -14px;
+  height: 35px;
+}
+
+.app_titleAndLogo {
+  display: flex;
+}
