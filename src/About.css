@@ -1,0 +1,41 @@
+.highlight_wrapper h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  font-size: 52px;
+}
+
+.highlight_wrapper .highlight_description {
+  line-height: 30px;
+  font-size: 2vw;
+  font-weight: 300;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+}
+
+.about_youtubeVideo {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 430px) {
+  .highlight_wrapper .highlight_description {
+    font-size: 4vw;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .highlight_wrapper .highlight_description {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .highlight_wrapper .highlight_description {
+    font-size: 18px;
+    padding: 10px 250px;
+  }
+}
