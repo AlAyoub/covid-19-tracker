@@ -8,6 +8,11 @@ import Table from './Table';
 import { sortData, prettyPrintStat } from './utils';
 import LineGraph from './LineGraph';
 import "leaflet/dist/leaflet.css";
+import About from './About';
+import Timelapse from './Timelapse';
+import Footer from './Footer';
+import { Element } from 'react-scroll';
+import WeThrive from './WeThrive';
 
 function App() {
   const [countries, setCountires] = useState([]);
@@ -151,6 +156,17 @@ function App() {
 
 
       </div>
+      <Element name="About">
+        <About />
+      </Element>
+      <Element name="WeThrive">
+        <WeThrive />
+      </Element>
+      <Element name="Timelapse">
+        <Timelapse />
+      </Element>
+
+      <Footer />
     </div>
   );
 }

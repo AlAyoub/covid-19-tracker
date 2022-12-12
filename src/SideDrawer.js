@@ -24,12 +24,12 @@ const SideDrawer = (props) => {
             onClose={() => props.onClose(false)}
         >
             <List component="nav">
-                <ListItem button onClick={() => scrollToElement('About COVID-19')}>
+                <ListItem button onClick={() => scrollToElement('About')}>
                     About COVID-19
                 </ListItem>
 
-                <ListItem button onClick={() => scrollToElement('The Latest Information')}>
-                    The Latest Information
+                <ListItem button onClick={() => scrollToElement('Timelapse')}>
+                    North America Timelapse Spread
                 </ListItem>
 
                 <ListItem button onClick={() => scrollToElement('Cases in KP Regions')}>
