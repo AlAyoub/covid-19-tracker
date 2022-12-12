@@ -55,7 +55,7 @@ function About() {
                         </p>
                     </div>
                     <div className="about_youtubeVideo">
-                        <iframe title="What is COVID-19" width="560" height="315" src="https://www.youtube.com/embed/uij5lfXbY6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe title="What is COVID-19" width="560" height="315" src="https://www.youtube.com/embed/uij5lfXbY6g" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
                 </div>
             </div>
