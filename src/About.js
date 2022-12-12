@@ -14,37 +14,37 @@ function About() {
                         <p>
                             <li>
                                 Fever or chills
-                        </li>
+                            </li>
                             <li>
                                 Cough
-                        </li>
+                            </li>
                             <li>
                                 Shortness of breath or difficulty breathing
-                        </li>
+                            </li>
                             <li>
                                 Muscle or body aches
-                        </li>
+                            </li>
                             <li>
                                 Fatigue
-                        </li>
+                            </li>
                             <li>
                                 Headache
-                        </li>
+                            </li>
                             <li>
                                 New loss of taste or smell
-                        </li>
+                            </li>
                             <li>
                                 Sore throat
-                        </li>
+                            </li>
                             <li>
                                 Congestion or runny nose
-                        </li>
+                            </li>
                             <li>
                                 Nausea or vomiting
-                        </li>
+                            </li>
                             <li>
                                 Diarrhea
-                        </li>
+                            </li>
                         </p>
 
                         &nbsp;
@@ -55,7 +55,7 @@ function About() {
                         </p>
                     </div>
                     <div className="about_youtubeVideo">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uij5lfXbY6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe title="What is COVID-19" width="560" height="315" src="https://www.youtube.com/embed/uij5lfXbY6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
