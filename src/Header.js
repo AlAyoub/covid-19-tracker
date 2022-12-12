@@ -54,11 +54,6 @@ class Header extends Component {
                     }}
                 >
                     <Toolbar className="header_toolbar">
-                        <img
-                            className="header_logo"
-                            src="https://healthy.kaiserpermanente.org/etc.clientlibs/settings/wcm/designs/kporg/kp-foundation/clientlib-modules/styleguide/resources/assets/images/logo.svg"
-                            alt="Kaiser Permanente Logo"
-                        />
                         <IconButton
                             className="header_menuButton"
                             aria-label="Menu"
